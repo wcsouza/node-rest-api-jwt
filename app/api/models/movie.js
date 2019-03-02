@@ -14,4 +14,4 @@ const MovieSchema = new mongoose.Schema({
   }
 });
 
-module.exports = restful.model("Movies", MovieSchema);
+module.exports = restful.model("Movie", MovieSchema);

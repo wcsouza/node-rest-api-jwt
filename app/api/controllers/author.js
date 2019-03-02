@@ -1,6 +1,6 @@
-const Author = require("../models/author");
+const AuthorModel = require("../models/author");
 
-Author.methods(["get", "post", "put", "delete"]);
-Author.updateOptions({ new: true, runValidators: true });
+AuthorModel.methods(["get", "post", "put", "delete"]);
+AuthorModel.updateOptions({ new: true, runValidators: true });
 
-module.exports = Author;
+module.exports = AuthorModel;

@@ -1,6 +1,6 @@
-const Movies = require("../models/movies");
+const MovieModel = require("../models/movie");
 
-Movies.methods(["get", "post", "put", "delete"]);
-Movies.updateOptions({ new: true, runValidators: true });
+MovieModel.methods(["get", "post", "put", "delete"]);
+MovieModel.updateOptions({ new: true, runValidators: true });
 
-module.exports = Movies;
+module.exports = MovieModel;

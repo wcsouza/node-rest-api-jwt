@@ -1,9 +1,9 @@
-const User = require("../models/users");
+const UserModel = require("../models/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-User.register = (req, res, next) => {
-  User.create(
+UserModel.register = (req, res, next) => {
+  UserModel.create(
     { name: req.body.name, email: req.body.email, password: req.body.password },
     function(err, result) {
       if (err) next(err);
@@ -17,8 +17,8 @@ User.register = (req, res, next) => {
   );
 };
 
-User.authenticate = (req, res, next) => {
-  User.findOne({ email: req.body.email }, function(err, userInfo) {
+UserModel.authenticate = (req, res, next) => {
+  UserModel.findOne({ email: req.body.email }, function(err, userInfo) {
     if (err) {
       next(err);
     } else {
@@ -46,4 +46,4 @@ User.authenticate = (req, res, next) => {
   });
 };
 
-module.exports = User;
+module.exports = UserModel;
