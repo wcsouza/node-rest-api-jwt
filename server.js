@@ -16,6 +16,7 @@ mongoose.connection.on(
 app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// register routes
 require("./routes")(app);
 
 app.get("/", function(req, res) {
