@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const moviesController = require("../app/api/controllers/movies");
+const moviesController = require("../app/api/controllers/movie");
 
 moviesController.register(router, "/");
 
