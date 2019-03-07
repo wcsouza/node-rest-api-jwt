@@ -1,7 +1,7 @@
 const validateUser = require("../utils/validadeUser");
 
-const movies = require("../routes/movie");
-const users = require("../routes/user");
+const movie = require("../routes/movie");
+const user = require("../routes/user");
 const author = require("../routes/author");
 
 module.exports = function(server) {
@@ -13,10 +13,10 @@ module.exports = function(server) {
   server.get("/favicon.ico", function(req, res) {
     res.sendStatus(204);
   });
-  
-  server.use("/user", users);
+
+  server.use("/user", user);
 
   // private route
-  server.use("/movie", validateUser, movies);
+  server.use("/movie", validateUser, movie);
   server.use("/author", validateUser, author);
 };
